@@ -6,11 +6,14 @@ import { LitElement } from 'lit';
  *
  */
 export declare class MySwitch extends LitElement {
-    static styles: import("lit").CSSResult;
-    render(): import("lit-html").TemplateResult<1>;
+  static styles: import('lit').CSSResult;
+  /** This is used to describe the switch */
+  label?: string;
+  checked: boolean;
+  render(): import('lit-html').TemplateResult<1>;
 }
 declare global {
-    interface HTMLElementTagNameMap {
-        'my-switch': MySwitch;
-    }
+  interface HTMLElementTagNameMap {
+    'my-switch': MySwitch;
+  }
 }

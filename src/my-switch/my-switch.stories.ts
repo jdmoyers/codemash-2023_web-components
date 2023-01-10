@@ -1,9 +1,9 @@
-import { html } from "lit";
-import "./index";
+import { html } from 'lit';
+import './index';
 
 export default {
-  title: "Components/Switch",
-  component: "my-switch",
+  title: 'Components/Switch',
+  component: 'my-switch',
   argTypes: {},
   parameters: {
     actions: {
@@ -12,8 +12,8 @@ export default {
   },
 };
 
-const DefaultTemplate = () => {
-  return html` <my-switch></my-switch> `;
+const DefaultTemplate = (args: any) => {
+  return html` <my-switch label="${args.label}" checked="${args.checked}"></my-switch>`;
 };
 
 export const Default: any = DefaultTemplate.bind({});

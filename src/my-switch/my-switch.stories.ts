@@ -7,7 +7,7 @@ export default {
   argTypes: {},
   parameters: {
     actions: {
-      handles: [],
+      handles: ['switchchange'],
     },
   },
 };
@@ -17,4 +17,6 @@ const DefaultTemplate = (args: any) => {
 };
 
 export const Default: any = DefaultTemplate.bind({});
-Default.args = {};
+Default.args = {
+  label: 'Test',
+};

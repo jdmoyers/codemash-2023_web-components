@@ -18,12 +18,17 @@ export default {
 };
 
 const DefaultTemplate = (args: any) => {
-  return html` <my-switch
-    label="${args.label}"
-    ?checked=${args.checked}
-    ?disabled=${args.disabled}
-    label-position=${args.labelPosition}
-  ></my-switch>`;
+  return html` <style>
+      my-switch {
+        --size: ${args['--size']};
+      }
+    </style>
+    <my-switch
+      label="${args.label}"
+      ?checked=${args.checked}
+      ?disabled=${args.disabled}
+      label-position=${args.labelPosition}
+    ></my-switch>`;
 };
 
 export const Default: any = DefaultTemplate.bind({});
@@ -31,4 +36,5 @@ export const Default: any = DefaultTemplate.bind({});
 Default.args = {
   label: 'Test',
   labelPosition: 'top',
+  ['--size']: '1rem',
 };

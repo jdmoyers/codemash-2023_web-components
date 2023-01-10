@@ -20,9 +20,9 @@ export default {
 const DefaultTemplate = (args: any) => {
   return html` <my-switch
     label="${args.label}"
-    ?checked="${args.checked}"
+    ?checked=${args.checked}
     ?disabled=${args.disabled}
-    ?label-position=${args.labelPosition}
+    label-position=${args.labelPosition}
   ></my-switch>`;
 };
 

@@ -8,7 +8,7 @@
       "elements": [
         {
           "name": "my-switch",
-          "description": "Switches allow the user to toggle an option on or off.\n\n**Slots:**\n - **checked** - Displayed when switch is checked\n- **uncheck** - Displayed when switch is unchecked\n\n**Events:**\n - **switchchange** - Emitted whenever the switch is toggled",
+          "description": "Switches allow the user to toggle an option on or off.\n\n**Slots:**\n - **checked** - Displayed when switch is checked\n- **uncheck** - Displayed when switch is unchecked\n\n**Events:**\n - **switchchange** - Emitted whenever the switch is toggled\n\n**CSS Parts:**\n - **control** - Controls the styles of the button element\n- **track** - Controls the styles of the track\n- **switch** - Controls the styles of the switch",
           "doc-url": "",
           "attributes": [
             {
@@ -65,7 +65,20 @@
     },
     "css": {
       "properties": [],
-      "pseudo-elements": []
+      "pseudo-elements": [
+        {
+          "name": "part(control)",
+          "description": "Controls the styles of the button element"
+        },
+        {
+          "name": "part(track)",
+          "description": "Controls the styles of the track"
+        },
+        {
+          "name": "part(switch)",
+          "description": "Controls the styles of the switch"
+        }
+      ]
     }
   }
 }

@@ -1,5 +1,18 @@
 {
   "version": 1.1,
   "properties": [],
-  "pseudoElements": []
+  "pseudoElements": [
+    {
+      "name": "::part(control)",
+      "description": "Controls the styles of the button element"
+    },
+    {
+      "name": "::part(track)",
+      "description": "Controls the styles of the track"
+    },
+    {
+      "name": "::part(switch)",
+      "description": "Controls the styles of the switch"
+    }
+  ]
 }

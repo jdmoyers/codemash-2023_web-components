@@ -9,13 +9,14 @@ import { styles } from './my-switch.styles';
  * @tag my-switch
  *
  * @event switchchange - Emitted whenever the switch is toggled
- *
  * @cssvar [--size=1rem] - Controls the size of the switch
- *
  * @slot checked - Displayed when switch is checked
- *
  * @slot uncheck - Displayed when switch is unchecked
+ * @csspart control - Controls the styles of the button element
+ * @csspart track - Controls the styles of the track
+ * @csspart switch - Controls the styles of the switch
  */
+
 @customElement('my-switch')
 export class MySwitch extends LitElement {
   static styles = styles;

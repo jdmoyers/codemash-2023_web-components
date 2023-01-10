@@ -14,6 +14,20 @@
           "name": "checked",
           "description": "Indicates if the switch is checked or unchecked",
           "values": []
+        },
+        {
+          "name": "disabled",
+          "description": "Disables the switch",
+          "values": []
+        },
+        {
+          "name": "label-position",
+          "values": [
+            { "name": "top" },
+            { "name": "start" },
+            { "name": "end" },
+            { "name": "bottom" }
+          ]
         }
       ]
     }

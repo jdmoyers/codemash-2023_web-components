@@ -20,6 +20,15 @@
               "name": "checked",
               "description": "Indicates if the switch is checked or unchecked",
               "value": { "type": "boolean" }
+            },
+            {
+              "name": "disabled",
+              "description": "Disables the switch",
+              "value": { "type": "boolean" }
+            },
+            {
+              "name": "label-position",
+              "value": { "type": "'top' | 'start' | 'end' | 'bottom'" }
             }
           ],
           "js": {
@@ -33,6 +42,15 @@
                 "name": "checked",
                 "description": "Indicates if the switch is checked or unchecked",
                 "value": { "type": "boolean" }
+              },
+              {
+                "name": "disabled",
+                "description": "Disables the switch",
+                "value": { "type": "boolean" }
+              },
+              {
+                "name": "label-position",
+                "value": { "type": "'top' | 'start' | 'end' | 'bottom'" }
               }
             ],
             "events": [

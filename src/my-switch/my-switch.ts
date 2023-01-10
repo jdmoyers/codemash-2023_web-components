@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit';
+import { styleMap } from 'lit/directives/style-map.js';
 import { customElement, property } from 'lit/decorators.js';
 import { styles } from './my-switch.styles';
 
@@ -19,7 +20,16 @@ export class MySwitch extends LitElement {
   /** Indicates if the switch is checked or unchecked */
   @property({ type: Boolean }) checked: boolean = false;
 
+  /** Disables the switch */
+  @property({ type: Boolean }) disabled: boolean = false;
+
+  @property({ attribute: 'label-position' }) labelPosition: 'top' | 'start' | 'end' | 'bottom' = 'top';
+
   public toggle() {
+    if (this.disabled) {
+      return;
+    }
+
     this.checked = !this.checked;
     this.emitChange();
   }
@@ -28,20 +38,42 @@ export class MySwitch extends LitElement {
     this.dispatchEvent(new CustomEvent('switchchange', { detail: { checked: this.checked }, bubbles: true }));
   }
 
+  private positionMapper() {
+    return (
+      {
+        top: 'column',
+        start: 'row',
+        end: 'row-reverse',
+        bottom: 'column-reverse',
+      }[this.labelPosition] || 'column'
+    );
+  }
+
   render() {
     return html`
-      <label id="switch-label">${this.label}</label>
-      <button
-        role="switch"
-        class="control"
-        aria-labelledby="switch-label"
-        @click=${this.toggle}
-        aria-checked="${this.checked}"
+      <div
+        class="base"
+        style="${styleMap({
+          display: 'flex',
+          justifyContent: 'space-between',
+          flexDirection: this.positionMapper(),
+        })}"
       >
-        <div class="track">
-          <div class="switch"></div>
-        </div>
-      </button>
+        <label id="switch-label">${this.label}</label>
+        <button
+          role="switch"
+          class="control"
+          aria-labelledby="switch-label"
+          @click=${this.toggle}
+          aria-checked="${this.checked}"
+          aria-disabled="${this.disabled}"
+          ?disabled="${this.disabled}"
+        >
+          <div class="track">
+            <div class="switch"></div>
+          </div>
+        </button>
+      </div>
     `;
   }
 }

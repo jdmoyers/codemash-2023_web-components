@@ -85,3 +85,31 @@ const IconDemoTemplate = () => {
 export const IconDemo: any = IconDemoTemplate.bind({});
 
 IconDemo.args = {};
+
+const PartsDemoTemplate = () => {
+  return html`
+    <style>
+      my-switch {
+        --size: 3rem;
+      }
+
+      my-switch::part(control) {
+        background-color: pink;
+        padding: 1rem;
+      }
+
+      my-switch::part(track) {
+        border-radius: 0;
+      }
+
+      my-switch::part(switch) {
+        border-radius: 0;
+      }
+    </style>
+    <my-switch label="Parts Demo"></my-switch>
+  `;
+};
+
+export const PartsDemo: any = PartsDemoTemplate.bind({});
+
+PartsDemo.args = {};

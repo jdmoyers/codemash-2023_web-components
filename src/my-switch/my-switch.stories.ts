@@ -4,7 +4,12 @@ import './index';
 export default {
   title: 'Components/Switch',
   component: 'my-switch',
-  argTypes: {},
+  argTypes: {
+    labelPosition: {
+      control: { type: 'radio' },
+      options: ['top', 'start', 'end', 'bottom'],
+    },
+  },
   parameters: {
     actions: {
       handles: ['switchchange'],

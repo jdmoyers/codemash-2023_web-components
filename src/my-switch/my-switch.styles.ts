@@ -6,6 +6,10 @@ export const styles = css`
     display: inline-block;
   }
 
+  *::slotted(.switch-icon) {
+    width: var(--size);
+  }
+
   .control {
     padding: 0;
     background-color: transparent;

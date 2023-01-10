@@ -11,6 +11,10 @@ import { styles } from './my-switch.styles';
  * @event switchchange - Emitted whenever the switch is toggled
  *
  * @cssvar [--size=1rem] - Controls the size of the switch
+ *
+ * @slot checked - Displayed when switch is checked
+ *
+ * @slot uncheck - Displayed when switch is unchecked
  */
 @customElement('my-switch')
 export class MySwitch extends LitElement {
@@ -71,9 +75,11 @@ export class MySwitch extends LitElement {
           aria-disabled="${this.disabled}"
           ?disabled="${this.disabled}"
         >
-          <div class="track">
-            <div class="switch"></div>
-          </div>
+          <slot name="${this.checked ? 'checked' : 'unchecked'}">
+            <div class="track">
+              <div class="switch"></div>
+            </div>
+          </slot>
         </button>
       </div>
     `;

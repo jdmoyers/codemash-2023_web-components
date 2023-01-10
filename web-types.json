@@ -8,7 +8,7 @@
       "elements": [
         {
           "name": "my-switch",
-          "description": "Switches allow the user to toggle an option on or off.\n\n**Events:**\n - **switchchange** - Emitted whenever the switch is toggled",
+          "description": "Switches allow the user to toggle an option on or off.\n\n**Slots:**\n - **checked** - Displayed when switch is checked\n- **uncheck** - Displayed when switch is unchecked\n\n**Events:**\n - **switchchange** - Emitted whenever the switch is toggled",
           "doc-url": "",
           "attributes": [
             {
